@@ -27,9 +27,9 @@ class ResizedServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('resized', function () {
-            $resizer = new Resized(config('resized.key'), config('resized.secret'));
-            $resizer->setHost(config('resized.host'));
-            $resizer->setDefaultImage(config('resized.default'));
+            $resizer = new Resized(\Config::get('resized.key'), \Config::get('resized.secret'));
+            $resizer->setHost(\Config::get('resized.host'));
+            $resizer->setDefaultImage(\Config::get('resized.default'));
 
             return $resizer;
         });
