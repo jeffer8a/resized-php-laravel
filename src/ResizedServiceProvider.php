@@ -16,7 +16,7 @@ class ResizedServiceProvider extends ServiceProvider
     {
         $source = dirname(__DIR__).'/config/resized.php';
 
-        $this->mergeConfigFrom($source, 'resized');
+        $this->package($source, 'resized');
     }
 
     /**
